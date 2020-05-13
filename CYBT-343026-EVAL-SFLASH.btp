@@ -36,6 +36,7 @@ DevicePreset "20706A2 Serial Flash kb"
 	DLConfigEEPROMAccessSpeed = 100
 	DLConfigVSOffset = 0
 	ConfigDSLocation = 12288
+	ConfigDS2Location = 270336
 	DLConfigSSLocation = 0
 	DLConfigIncludeBTWSecurityKey = 0
 	DLConfigVSLocation = 4096
