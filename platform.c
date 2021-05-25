@@ -57,3 +57,11 @@ void platform_led_init( void )
         wiced_hal_gpio_configure_pin( platform_led[i].led_gpio, platform_led[i].led_config, platform_led[i].led_default_state);
     }
 }
+
+/*
+ * For RTS and CTS
+ * disable other pads connected to these pins (unbond)
+*/
+void platform_puart_flow_control_pin_init()
+{
+}

@@ -53,10 +53,13 @@ SEARCH_$(CY_TARGET_DEVICE)?=$(IN_REPO_BTSDK_ROOT)/wiced_btsdk/dev-kit/baselib/$(
 SEARCH+=$(SEARCH_$(CY_TARGET_DEVICE))
 endif
 CY_BSP_PATH?=$(SEARCH_TARGET_$(TARGET))
+# ensure the baselib has been instantiated (in case make getlibs had already been performed, but for a BSP with a different CSP
+ifneq ("$(wildcard $(SEARCH_$(CY_TARGET_DEVICE))/COMPONENT_$(CY_TARGET_DEVICE))","")
 CY_BASELIB_PATH?=$(SEARCH_$(CY_TARGET_DEVICE))/COMPONENT_$(CY_TARGET_DEVICE)
 CY_BASELIB_CORE_PATH?=$(SEARCH_core-make)
 CY_INTERNAL_BASELIB_PATH?=$(patsubst %/,%,$(CY_BASELIB_PATH))
 override CY_DEVICESUPPORT_SEARCH_PATH:=$(call CY_MACRO_SEARCH,devicesupport.xml,$(CY_INTERNAL_BASELIB_PATH))
+endif
 
 # 20706 devices may only have 0 or 1 mesh debug lib linked, disallow multiple
 MESH_DEBUG_LIB_LIST:=$(filter 1,$(MESH_CORE_DEBUG_TRACES) $(MESH_MODELS_DEBUG_TRACES) $(MESH_PROVISIONER_DEBUG_TRACES))
@@ -143,6 +146,10 @@ define extract_btp_file_value
 $(patsubst $1=%,%,$(filter $1%,$2))
 endef
 
+# these make targets do not need this data and don't work if importing an app
+# that has not yet run make getlibs, so skip it
+ifeq ($(filter import_deps getlibs get_app_info,$(MAKECMDGOALS)),)
+
 # override core-make buggy CY_SPACE till it's fixed
 CY_EMPTY=
 CY_SPACE=$(CY_EMPTY) $(CY_EMPTY)
@@ -162,6 +169,8 @@ SS_LOCATION = $(call extract_btp_file_value,DLConfigSSLocation,$(CY_BT_FILE_TEXT
 VS_LOCATION = $(call extract_btp_file_value,DLConfigVSLocation,$(CY_BT_FILE_TEXT))
 VS_LENGTH = $(call extract_btp_file_value,DLConfigVSLength,$(CY_BT_FILE_TEXT))
 DS_LOCATION = $(call extract_btp_file_value,ConfigDSLocation,$(CY_BT_FILE_TEXT))
+
+endif # end filter import_deps getlibs get_app_info
 
 # OTA
 ifeq ($(OTA_FW_UPGRADE),1)

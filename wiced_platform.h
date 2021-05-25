@@ -117,4 +117,19 @@ typedef enum
  */
 #define APPLICATION_SPECIFIC_FLASH_RESERVATION  0
 
+/**
+ * platform_puart_flow_control_pin_init
+ *
+ * Unbond pads to prepare RTS/CTS flow control
+ */
+void platform_puart_flow_control_pin_init(void);
+
+/**
+ * Platform-specific functions to disable pads bonded to pins
+ *
+*/
+void unbond_P11(void);
+void unbond_P30(void);
+void unbond_P35(void);
+
 /* @} */
