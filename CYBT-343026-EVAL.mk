@@ -47,6 +47,8 @@ BLD=A
 CY_TARGET_DEVICE?=$(CHIP)$(CHIP_REV)
 CY_APP_PATCH_LIBS+=$(CY_$(CY_TARGET_DEVICE)_APP_PATCH_LIBS)
 COMPONENTS+=$(CY_TARGET_DEVICE) $(COMPONENTS_$(CY_TARGET_DEVICE))
+# Module-specific patch lib
+CY_APP_PATCH_LIBS+=FM25Q04_sflash.a
 ifeq ($(SEARCH_$(CY_TARGET_DEVICE)),)
 # internal only - app deploys will always initialize this in mtb.mk
 SEARCH_$(CY_TARGET_DEVICE)?=$(IN_REPO_BTSDK_ROOT)/wiced_btsdk/dev-kit/baselib/$(CY_TARGET_DEVICE)
@@ -67,6 +69,9 @@ ifneq ($(filter $(words $(MESH_DEBUG_LIB_LIST)), 0 1),$(words $(MESH_DEBUG_LIB_L
 $(info MESH_CORE_DEBUG_TRACES=$(MESH_CORE_DEBUG_TRACES) MESH_MODELS_DEBUG_TRACES=$(MESH_MODELS_DEBUG_TRACES) MESH_PROVISIONER_DEBUG_TRACES=$(MESH_PROVISIONER_DEBUG_TRACES))
 $(error $(TARGET) only supports linking 1 mesh debug library at a time)
 endif
+
+# declare which stack version to use in COMPONENT folders
+COMPONENTS+=btstack_v1
 
 #
 # Define the features for this target

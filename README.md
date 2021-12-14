@@ -2,13 +2,12 @@
 
 ### Overview
 
-The Cypress CYBT-343026-EVAL Evaluation Kit enables you to evaluate and develop single-chip Bluetooth applications using the EZ-BT WICED Module CYBT-343026-02. The CYBT-343026-02 EZ-BT WICED Module is an integrated, fully certified, 12.0 mm x 16.61 mm x 1.70 mm, programmable dual-mode Bluetooth module designed to reduce your time-to-market. The CYBT-343026-02 module utilizes the Cypress CYW20819 silicon device.  Manufactured using advanced CMOS low-power process, the CYW20819 employs high integration to reduce external components, thereby minimizing the device's footprint and cost. This kit helps evaluate device functionality and develop applications quickly for faster time-to-market. CYBT-343026-EVAL can be used as a standalone evaluation kit or can be combined with Arduino-compatible shields.
+The Infineon CYBT-343026-EVAL Kit enables you to evaluate and develop single-chip Bluetooth&#174; applications using the CYW20706, an ultra-low-power dual-mode Bluetooth&#174; 5.0 wireless MCU device. The CYW20706 is a stand-alone baseband processor with an integrated 2.4 GHz transceiver supporting LE/BR/EDR. The CYW20706 employs high integration to reduce external components, thereby minimizing the device's footprint and cost. This kit helps evaluate device functionality and develop applications quickly for faster time-to-market.
 
-* CYW20819-based dual-mode (LE/BR/EDR) Bluetooth 5.0-compliant fully certified module (CYBT-343026-02)
-* Arduino compatible headers for hardware expansion
-* User switches and LEDs
-* FCC, ISED, MIC, and CE Certified Module on board (CYBT-343026-02)
-* USB connector for power, programming and USB-UART bridge
+### Kit Features
+
+* CYW20706 is a monolithic, single chip, Bluetooth&#174; dual-mode System-on-a-Chip (SoC) that includes a baseband processor, an Arm&#174; Cortex&#174;-M3 processor, and an integrated transceiver.
+* The CYBT-343026-EVAL enables you to evaluate and develop applications on the AIROC&#8482; CYBT-343026-01 Bluetooth&#174; and Bluetooth&#174; LE module. CYBT-343026-EVAL can be used as a standalone evaluation kit or can be combined with Arduino compatible shields.
 
 ### Standalone Usage
 
@@ -20,18 +19,13 @@ To use the CYBT-343026-EVAL:
 
 3) Refer to KBA226703 for platform files, Makefile target generation, and HCI UART switch position setting for programming
 
-4) Use ModusToolbox 2.0 and BTSDK 2.0 (or higher), develop your application, program and test
+4) Use ModusToolbox&#8482; 2.0 and BTSDK 2.0 (or higher) to develop your application, program, and test
 
 Note: Recover the CYBT-343026-EVAL before programming. The Arduino-compatible headers(J3/J4/J6/J7) are optional connections, which provide additional I/O connections to the module and allow for other Arduino shields to be used during development.
 
 Optional Usage with Arduino Shield:
 
 Arduino compatible shields can be connected through the Arduino compatible headers (J3/J4/J6/J7) to provide additional I/O connections and functionality.
-
-### Kit Contents
-
-* 1 X EZ-BT Module Arduino Evaluation Board (CYBT-343026-EVAL) with on-board EZ-BT WICED Module (CYBT-343026-02)
-* 1 X USB Cable
 
 ### Additional Information
 
