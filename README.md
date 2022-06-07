@@ -6,7 +6,7 @@ The Infineon CYBT-343026-EVAL Kit enables you to evaluate and develop single-chi
 
 ### Kit Features
 
-* CYW20706 is a monolithic, single chip, Bluetooth&#174; dual-mode System-on-a-Chip (SoC) that includes a baseband processor, an Arm&#174; Cortex&#174;-M3 processor, and an integrated transceiver.
+* CYW20706 is a monolithic, single chip, Bluetooth&#174; dual-mode system on chip that includes a baseband processor, an Arm&#174; Cortex&#174;-M3 processor, and an integrated transceiver.
 * The CYBT-343026-EVAL enables you to evaluate and develop applications on the AIROC&#8482; CYBT-343026-01 Bluetooth&#174; and Bluetooth&#174; LE module. CYBT-343026-EVAL can be used as a standalone evaluation kit or can be combined with Arduino compatible shields.
 
 ### Standalone Usage
@@ -31,4 +31,4 @@ Arduino compatible shields can be connected through the Arduino compatible heade
 
 Max UART baud rate is 1M. Use baud rate of 115200 for Client Control.
 
-For more information, see [CYBT-343026-EVAL](http://www.cypress.com/CYBT-343026-EVAL)
+For more information, see [CYBT-343026-EVAL](https://www.infineon.com/cms/en/product/evaluation-boards/cybt-343026-eval/)

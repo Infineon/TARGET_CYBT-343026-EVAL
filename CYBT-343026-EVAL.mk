@@ -1,5 +1,5 @@
 #
-# Copyright 2016-2021, Cypress Semiconductor Corporation (an Infineon company) or
+# Copyright 2016-2022, Cypress Semiconductor Corporation (an Infineon company) or
 # an affiliate of Cypress Semiconductor Corporation.  All rights reserved.
 #
 # This software, including source code, documentation and related
@@ -63,11 +63,11 @@ CY_INTERNAL_BASELIB_PATH?=$(patsubst %/,%,$(CY_BASELIB_PATH))
 override CY_DEVICESUPPORT_SEARCH_PATH:=$(call CY_MACRO_SEARCH,devicesupport.xml,$(CY_INTERNAL_BASELIB_PATH))
 endif
 
-# 20706 devices may only have 0 or 1 mesh debug lib linked, disallow multiple
+# 20706 devices may not have mesh debug lib linked
 MESH_DEBUG_LIB_LIST:=$(filter 1,$(MESH_CORE_DEBUG_TRACES) $(MESH_MODELS_DEBUG_TRACES) $(MESH_PROVISIONER_DEBUG_TRACES))
-ifneq ($(filter $(words $(MESH_DEBUG_LIB_LIST)), 0 1),$(words $(MESH_DEBUG_LIB_LIST)))
+ifneq ($(MESH_DEBUG_LIB_LIST), )
 $(info MESH_CORE_DEBUG_TRACES=$(MESH_CORE_DEBUG_TRACES) MESH_MODELS_DEBUG_TRACES=$(MESH_MODELS_DEBUG_TRACES) MESH_PROVISIONER_DEBUG_TRACES=$(MESH_PROVISIONER_DEBUG_TRACES))
-$(error $(TARGET) only supports linking 1 mesh debug library at a time)
+$(error $(TARGET) does not support linking mesh debug library)
 endif
 
 # declare which stack version to use in COMPONENT folders
