@@ -2,7 +2,7 @@
 
 ### Overview
 
-The Infineon CYBT-343026-EVAL Kit enables you to evaluate and develop single-chip Bluetooth&#174; applications using the CYW20706, an ultra-low-power dual-mode Bluetooth&#174; 5.0 wireless MCU device. The CYW20706 is a stand-alone baseband processor with an integrated 2.4 GHz transceiver supporting LE/BR/EDR. The CYW20706 employs high integration to reduce external components, thereby minimizing the device's footprint and cost. This kit helps evaluate device functionality and develop applications quickly for faster time-to-market.
+The Infineon CYBT-343026-EVAL Kit enables you to evaluate and develop single-chip Bluetooth&#174; applications using the CYW20706, an ultra-low-power dual-mode Bluetooth&#174; 5.4 wireless MCU device. The CYW20706 is a stand-alone baseband processor with an integrated 2.4 GHz transceiver supporting LE/BR/EDR. The CYW20706 employs high integration to reduce external components, thereby minimizing the device's footprint and cost. This kit helps evaluate device functionality and develop applications quickly for faster time-to-market.
 
 ### Kit Features
 
