@@ -92,7 +92,14 @@ PLATFORM_DIRECT_LOAD_BASE_ADDR = 0x2404F0
 # Max. supported baudrate by this platform
 CY_CORE_DEFINES+=-DHCI_UART_MAX_BAUD=1000000
 # default baud rate is 3M, that is the max supported on macOS
+# Set default baud rate to 3M for headset_standalone HCI audio streaming functionality
+HCI_UART_DEFAULT_BAUD_3M?=0
+
+ifeq ($(HCI_UART_DEFAULT_BAUD_3M),1)
+CY_CORE_DEFINES+=-DHCI_UART_DEFAULT_BAUD=3000000
+else
 CY_CORE_DEFINES+=-DHCI_UART_DEFAULT_BAUD=115200
+endif
 
 #
 # TARGET swd interface setup
